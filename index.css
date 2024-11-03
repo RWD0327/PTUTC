@@ -1,0 +1,230 @@
+/* Global Styles */
+html, body {
+    margin: 0;
+    padding: 0;
+    overflow-x: hidden; ;
+}
+
+* {
+    box-sizing: border-box;
+    list-style: none;
+    text-decoration: none;
+    color: black;
+}
+
+/* Wrapper Layout */
+.wrapper {
+    min-height: 100vh;
+    display: grid;
+    grid-template-rows: auto 1fr auto;
+    grid-template-columns: 1fr 4fr 1fr;
+    grid-template-areas: 
+        "header header aside"
+        "main   main   aside"
+        "footer footer aside";
+}
+
+/* Container Layout */
+.container {
+    display: grid;
+    grid-template-rows: 1fr;
+    grid-template-columns: 1fr;
+    grid-template-areas: 
+        "logo nav theme";
+}
+
+/* Header Styles */
+header {
+    grid-area: header;
+    background-color: rgb(216, 216, 216);
+}
+
+.logo {
+    grid-area: logo;
+    margin: auto 1rem;
+}
+
+.theme {
+    grid-area: theme;
+    margin: auto 0.5rem;
+}
+/* Navigation Styles */
+.nav {
+    grid-area: nav;
+    margin: auto 1rem;
+}
+
+.nav li {
+    display: inline;
+    margin: auto 0.5rem;
+    font-size: 17px;
+}
+
+.menubar {
+    grid-area: menubar;
+    display: none;
+}
+
+.theme{
+    position: relative;
+    padding: 15px 30px;
+    border-radius: 24px;
+    background-color: black;
+    color: white;
+    transition: change 0.3s;
+}
+
+.theme.after{
+    background-color: white;
+    color: black;
+    transition: 0.3s;
+}
+
+.btn{
+    position: absolute;
+    left: 4px;
+    top: 3px;
+    background-color: #6b6b6b;
+    color: white;
+    padding: 12px;
+    border-radius: 50%;
+    border: none;
+    cursor: pointer;
+    transform: translateX(0);
+    transition: transform 0.3s;
+}
+
+.btn.after{
+    transform: translateX(24px);
+    transition: transform 0.3s;
+}
+
+main {
+    grid-area: main;
+    background-color: white;
+}
+
+main h1{
+    text-align: center;
+    margin: 2rem;
+}
+
+.intro {
+    margin: 2rem;
+}
+
+.intro > p {
+    font-size: 1.3rem;
+    text-align: center;
+}
+
+.memberlist {
+    display: grid;
+    grid-template-rows: 1fr;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    gap: 1rem;
+    margin: 2rem;
+    text-align: center;
+}
+
+.member {
+    display: grid;
+    grid-template-areas: 
+        "profile info";
+    background-color: rgb(216, 216, 216);
+    min-width: 200px;
+    padding: 0 1rem;
+    border-radius: 10px;
+    transform: scale3d(1, 1, 1);
+    transition: transform 0.3s;
+}
+
+.member:hover {
+    transform: scale3d(1.05, 1.05, 1.05);
+    transition: transform 0.3s;
+}
+
+.profile{
+    grid-area: profile;
+    margin: auto;
+    width: 100px;
+}
+
+.info {
+    grid-area: info;
+    text-align: left;
+}
+
+.projectlist {
+    display: grid;
+    grid-template-rows: 1fr;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    gap: 1rem;
+    margin: 2rem;
+    text-align: center;
+}
+
+.project {
+    display: grid;
+    grid-template-areas: 
+        "project info";
+    background-color: rgb(216, 216, 216);
+    min-width: 200px;
+    padding: 0 1rem;
+    border-radius: 10px;
+    transform: scale3d(1, 1, 1);
+    transition: transform 0.3s;
+}
+
+.project:hover {
+    transform: scale3d(1.05, 1.05, 1.05);
+    transition: transform 0.3s;
+}
+
+/* Aside Styles */
+aside {
+    width: 100%;
+    grid-area: aside;
+    background-color: rgb(216, 216, 216);
+}
+
+/* Footer Styles */
+footer {
+    grid-area: footer;
+    background-color: rgb(216, 216, 216);
+}
+
+/* Dark Theme Styles */
+:root[data-theme="dark"] {
+    --d-primary-color: black;
+    --dt-color: white;
+    --d-second-background: #222;
+}
+
+[data-theme="dark"] main {
+    background-color: var(--d-primary-color);
+    color: var(--dt-color);
+}
+
+[data-theme="dark"] header {
+    background-color: var(--d-second-background);
+    color: var(--dt-color);
+}
+
+[data-theme="dark"] footer {
+    background-color: var(--d-second-background);
+    color: var(--dt-color);
+}
+
+[data-theme="dark"] aside {
+    background-color: var(--d-second-background);
+    color: var(--dt-color);
+}
+
+[data-theme="dark"] h1, h2, p, a {
+    color: var(--dt-color);
+}
+
+[data-theme="dark"] .member {
+    background-color: var(--d-second-background);
+}
