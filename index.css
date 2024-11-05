@@ -6,7 +6,6 @@ html, body {
 }
 
 * {
-    box-sizing: border-box;
     list-style: none;
     text-decoration: none;
     color: black;
@@ -17,17 +16,16 @@ html, body {
     min-height: 100vh;
     display: grid;
     grid-template-rows: auto 1fr auto;
-    grid-template-columns: 1fr 4fr 1fr;
+    grid-template-columns: 1fr 1fr 1fr;
     grid-template-areas: 
         "header header aside"
         "main   main   aside"
-        "footer footer aside";
+        "footer footer footer";
 }
 
 /* Container Layout */
 .container {
     display: grid;
-    grid-template-rows: 1fr;
     grid-template-columns: 1fr;
     grid-template-areas: 
         "logo nav theme";
@@ -37,7 +35,7 @@ html, body {
 /* Header Styles */
 header {
     grid-area: header;
-    background-color: rgb(216, 216, 216);
+    background-color: #f8f9fa;
 }
 
 .logo {
@@ -96,14 +94,14 @@ header {
 }
 
 .btn.after{
-    transform: translateX(24px);
+    transform: translateX(29px);
     transition: transform 0.3s;
 }
 
 main {
     grid-area: main;
-    background-color: white;
-    height: auto;
+    padding: 1rem;
+    background-color: #ffffff;
 }
 
 main h1{
@@ -121,12 +119,11 @@ main h1{
 }
 
 .memberlist {
-    display: grid;
-    grid-template-rows: 1fr;
-    grid-template-columns: repeat(auto-fill, minmax(265px, 0fr));
-    gap: 1rem;
+    display: flex;
+    flex-wrap: wrap;
     text-align: center;
     justify-content: center;
+    align-items: center;
 }
 
 .member {
@@ -134,8 +131,8 @@ main h1{
     grid-template-areas: 
         "profile info";
     background-color: rgb(216, 216, 216);
-    min-width: 265px;
-    padding: 0 1rem;
+    width: 265px;
+    margin: 0.5rem;
     border-radius: 10px;
     transform: scale3d(1, 1, 1);
     transition: transform 0.3s;
@@ -155,14 +152,13 @@ main h1{
 .info {
     grid-area: info;
     text-align: left;
+    margin: auto 5px;
     width: auto;
 }
 
 .projectlist {
-    display: grid;
-    grid-template-rows: 1fr;
-    grid-template-columns: repeat(auto-fill, minmax(300px, 0fr));
-    gap: 1rem;
+    display: flex;
+    flex-wrap: wrap;
     text-align: center;
     justify-content: center;
 }
@@ -172,9 +168,8 @@ main h1{
     grid-template-areas: 
         "project p-info";
     background-color: rgb(216, 216, 216);
-    min-width: 300px;
-    padding: 0 1rem;
     border-radius: 10px;
+    margin: 0.5rem;
     transform: scale3d(1, 1, 1);
     transition: transform 0.3s;
 }
@@ -190,8 +185,8 @@ main h1{
 }
 
 .thumbnail img{
-    width: 100%;
-    height: 100%;
+    width: 110.25px;
+    height: 110.25px;
     border-radius: 10px;
     object-fit: cover;
     object-position: center;
@@ -199,20 +194,30 @@ main h1{
 
 .p-info{
     grid-area: p-info;
+    margin: auto 5px;
     text-align: left;
 }
 
 /* Aside Styles */
 aside {
-    width: 100%;
     grid-area: aside;
-    background-color: rgb(216, 216, 216);
+    background-color: #e9ecef;
+    padding: 1rem;
 }
 
 /* Footer Styles */
 footer {
     grid-area: footer;
-    background-color: rgb(216, 216, 216);
+    background-color: #f8f9fa;
+    padding: 1rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.right {
+    text-align: right;
+    justify-content: space-between;
 }
 
 /* Dark Theme Styles */
@@ -260,7 +265,7 @@ footer {
 
 @media (max-width: 480px){
     .wrapper{
-        grid-template-rows: auto 1fr auto;
+        grid-template-rows: auto auto auto;
         grid-template-columns: 1fr;
         grid-template-areas: 
             "header"
@@ -303,7 +308,7 @@ footer {
         grid-template-areas: 
             "header header aside"
             "main   main   aside"
-            "footer footer aside";
+            "footer footer footer";
     }
 }
 
@@ -314,6 +319,6 @@ footer {
         grid-template-areas: 
             "header header aside"
             "main   main   aside"
-            "footer footer aside";
+            "footer footer footer";
     }    
 }
