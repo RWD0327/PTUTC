@@ -18,9 +18,9 @@ html, body {
     grid-template-rows: auto 1fr auto;
     grid-template-columns: 1fr 1fr 1fr;
     grid-template-areas: 
-        "header header aside"
-        "main   main   aside"
-        "footer footer footer";
+        "header header"
+        "main   main"
+        "footer footer";
 }
 
 /* Container Layout */
@@ -41,6 +41,12 @@ header {
 .logo {
     grid-area: logo;
     margin: auto 1rem;
+}
+
+.logo img {
+    width: 50px;
+    height: 50px;
+    object-fit: cover;
 }
 
 .theme {
@@ -198,14 +204,6 @@ main h1{
     text-align: left;
 }
 
-/* Aside Styles */
-aside {
-    grid-area: aside;
-    background-color: #e9ecef;
-    padding: 1rem;
-}
-
-/* Footer Styles */
 footer {
     grid-area: footer;
     background-color: #f8f9fa;
@@ -220,11 +218,10 @@ footer {
     justify-content: space-between;
 }
 
-/* Dark Theme Styles */
 :root[data-theme="dark"] {
     --d-primary-color: black;
     --dt-color: white;
-    --d-second-background: #222;
+    --d-second-background: #1b1b1b;
 }
 
 [data-theme="dark"] main {
@@ -259,7 +256,7 @@ footer {
     background-color: var(--d-second-background);
 }
 
-[data-theme="dark"] .thumbnail #PTU{
+[data-theme="dark"] .thumbnail #PTU, .logo img {
     filter: invert(1);
 }
 
@@ -306,9 +303,9 @@ footer {
         grid-template-rows: auto 1fr auto;
         grid-template-columns: 1fr;
         grid-template-areas: 
-            "header header aside"
-            "main   main   aside"
-            "footer footer footer";
+            "header header"
+            "main   main"
+            "footer footer";
     }
 }
 
@@ -317,8 +314,8 @@ footer {
         grid-template-rows: auto 1fr auto;
         grid-template-columns: 1fr;
         grid-template-areas: 
-            "header header aside"
-            "main   main   aside"
-            "footer footer footer";
+            "header header"
+            "main   main"
+            "footer footer";
     }    
 }
