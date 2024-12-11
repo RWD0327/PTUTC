@@ -30,4 +30,10 @@ document.addEventListener('DOMContentLoaded', function() {
             }
         });
     }
+
+    const btnani = document.querySelector('.btn');
+    btnani.addEventListener('click', function(){
+        btnani.classList.toggle('active');
+        document.querySelector('.theme').classList.toggle('active');
+    });
 });
